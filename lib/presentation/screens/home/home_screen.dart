@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:widgets/config/menu/menu_item.dart';
+import 'package:widgets/presentation/screens/screen.dart';
 
 class HomeScreen extends StatelessWidget {
+  static const String name = 'home_screen';
   const HomeScreen({super.key});
 
   @override
@@ -54,7 +56,8 @@ class _CustomListItem extends StatelessWidget {
       ),
       onTap: () {
         // permite navegar y volver a la pantalla anterior
-        context.push(menuItem.url);
+        //context.push(menuItem.url);
+        context.pushNamed(menuItem.name);
       },
     );
   }
