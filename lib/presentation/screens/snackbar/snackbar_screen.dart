@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class SnackbarScreen extends StatelessWidget {
   const SnackbarScreen({super.key});
@@ -22,11 +23,50 @@ class SnackbarScreen extends StatelessWidget {
     ScaffoldMessenger.of(context).showSnackBar(snackbar);
   }
 
+  void openDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      // obliga que se realiza algun en el boton para cerrarlo
+      barrierDismissible: false,
+      builder: (context) => AlertDialog(
+        title: const Text('Estas seguro?'),
+        content: const Text(
+            'Informacion de las licencias u otro contenido que se quiera mostrar dentro del panel de dialogo o alerts o contenedores flotantes '),
+        actions: [
+          TextButton(
+              onPressed: () {
+                // esta opcion gracias a go_router
+                context.pop();
+              },
+              child: const Text('Cancelar')),
+          FilledButton(onPressed: () {}, child: const Text('Aceptar'))
+        ],
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('SnackBars and dialogos'),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            FilledButton(
+                onPressed: () {
+                  showAboutDialog(context: context, children: [
+                    const Text('dialogo con las licencias del proyecto')
+                  ]);
+                },
+                child: const Text('Licencias usadas')),
+            FilledButton(
+                onPressed: () => openDialog(context),
+                child: const Text('Mostrar Dialogo'))
+          ],
+        ),
       ),
       floatingActionButton: FloatingActionButton.extended(
         onPressed: () => showCustomSnackBar(context),
