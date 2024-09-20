@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:widgets/presentation/screens/bottons/buttons_screen.dart';
-import 'package:widgets/presentation/screens/cards/card_screen.dart';
+import 'package:widgets/presentation/screens/screen.dart';
 
 class MenuItem {
   final String title;
@@ -30,4 +29,16 @@ const List<MenuItem> appMenuItems = [
       url: '/cards',
       icon: Icons.smart_button_outlined,
       name: CardScreen.name),
+  MenuItem(
+      title: 'ProgressIndicators..',
+      subtitle: 'Progress',
+      url: '/progress',
+      icon: Icons.refresh_rounded,
+      name: ProgressScreen.name),
+  MenuItem(
+      title: 'SnackBars and dialogos',
+      subtitle: 'SnackBars y dialogs...',
+      url: '/snackbars',
+      icon: Icons.refresh_rounded,
+      name: SnackbarScreen.name),
 ];
