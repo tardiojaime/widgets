@@ -47,4 +47,10 @@ const List<MenuItem> appMenuItems = [
       url: '/animated',
       icon: Icons.check_box_outline_blank_rounded,
       name: AnimatedScreen.name),
+  MenuItem(
+      title: 'Ui Controls',
+      subtitle: 'Ui controls, radiobutton switch',
+      url: '/uicontrols',
+      icon: Icons.car_rental_outlined,
+      name: UiControlsScreen.name),
 ];
