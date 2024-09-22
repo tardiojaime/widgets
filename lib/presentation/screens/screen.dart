@@ -1,3 +1,5 @@
+export 'package:widgets/presentation/screens/app_tutorial/app_tutorial_screen.dart';
+
 export 'package:widgets/presentation/screens/ui_controls/ui_controls_screen.dart';
 export 'package:widgets/presentation/screens/animated/animated_screen.dart';
 export 'package:widgets/presentation/screens/snackbar/snackbar_screen.dart';
