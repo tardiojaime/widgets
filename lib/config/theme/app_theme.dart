@@ -25,4 +25,10 @@ class AppTheme {
       brightness: isDarkmode ? Brightness.dark : Brightness.light,
       // configuracion para AppBar = para que este no se ubique en el centro
       appBarTheme: const AppBarTheme(centerTitle: false));
+  // No se recomienda cambiar el tipo final para realizar cambios en el desde el themeNotifierProvider
+  // en el caso de realizar cambios en el darkMode desde el themeNotifier
+  // en su Lugar Se recomienda realiza una copia de la clase | mantener un estado inmutable
+  AppTheme copyWith({int? selectedColor, bool? isDarkmode}) => AppTheme(
+      selectedColor: selectedColor ?? this.selectedColor,
+      isDarkmode: isDarkmode ?? this.isDarkmode);
 }
