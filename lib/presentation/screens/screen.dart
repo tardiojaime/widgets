@@ -7,3 +7,6 @@ export 'package:widgets/presentation/screens/bottons/buttons_screen.dart';
 export 'package:widgets/presentation/screens/cards/card_screen.dart';
 export 'package:widgets/presentation/screens/home/home_screen.dart';
 export 'package:widgets/presentation/screens/progress/progress_screen.dart';
+export 'package:widgets/presentation/screens/counter/counter_screen.dart';
+export 'package:widgets/presentation/providers/counter_provider.dart';
+export 'package:widgets/presentation/screens/theme/theme_changer.dart';
